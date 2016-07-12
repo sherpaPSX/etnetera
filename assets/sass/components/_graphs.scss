@@ -166,6 +166,7 @@
 	@include list-inline-block;
 	text-align: left;
 	font-size: .9em; 
+	clear: both;
 	
 	@media (max-width: $graph-breakpoint) {
 		clear: both;
