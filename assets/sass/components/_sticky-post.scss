@@ -1,0 +1,23 @@
+.sticky-post {
+	text-align: center;
+	padding: 1em 0; 
+	
+	.post-intro {
+		display: inline-block;
+		margin-right: 1em; 
+		
+	}
+
+	a {
+		color: $brand-color;
+		display: inline-block;
+		
+	}
+}
+
+.timeago {
+	font-size: 0.750em;
+	color: #7d7d7d;
+	text-transform: uppercase;
+	margin-right: 1em; 
+}

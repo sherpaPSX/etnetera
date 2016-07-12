@@ -1,0 +1,203 @@
+.graphs  {
+	margin-bottom: 2em; 
+}
+.graph-wrapper {
+	display: inline-block;
+	padding-left: 3em; 
+	padding-top: 2em; 
+	
+	@media (max-width: $graph-breakpoint) {
+		padding-left: 0;  
+		text-align: left;
+	}	
+	
+}
+
+.graph-heading {
+	text-align: left;
+	font-weight: bold; 
+}
+
+.graph {
+	@include list-unstyled;
+	@include list-inline-block;
+	float: left;
+    position: relative;
+    
+
+    &:before {
+		content: "\e907";
+		@extend %icon;
+		position: absolute;
+	    left: -1em;
+	    bottom: 0;
+	    font-size: 3em;
+	    color: $brand-color;
+	    
+	    @media (max-width: $graph-breakpoint) { 
+			bottom: auto;
+			top: 0;
+			left: 0;  
+	    }
+
+		
+	}
+    
+    @media (max-width: $graph-breakpoint) {
+		display: inline-block;
+		float: none;
+		padding-top: 4em; 
+	}	
+	
+	.item {
+		width: 20px;
+		float: left;
+		vertical-align: baseline;
+		position: relative;
+		transition: all .2s ease;
+		
+		@media (max-width: $graph-breakpoint) {
+			display: block;
+			float: none; 
+		}	
+		
+		
+
+		&:hover {
+			opacity: .8;
+			
+			.number {
+				opacity:1;
+			}
+		}
+	}
+
+	&.rounded .item{
+		border-radius: 1em 1em 0 0;
+		
+		@media (max-width: $graph-breakpoint) {
+			border-radius: 0 1em 1em  0;
+		}	
+	}
+
+	.number {
+		position: absolute;
+	    top: -2em;
+	    font-size: .8em;
+	    left: 50%;
+	    z-index: 3;
+	    opacity: 0;
+	    transition: all .1s ease;
+	    transform: rotate(-90deg);
+	    display: block;
+	    left: 0;
+   		width: 100%;
+   		
+   		@media (max-width: $graph-breakpoint) {
+			transform: rotate(0deg);
+			left: auto;
+			top: 0;
+			right: -3em;
+			width: auto;    
+		}	
+		
+	}
+
+}
+
+.times {
+	@include list-unstyled;
+	@include list-inline-block;
+	margin-top: $small-margin; 
+	clear: both;
+	float: left;
+	position: relative;
+	margin-bottom: 1em; 
+	
+
+	@media (max-width: $graph-breakpoint) {
+		display: inline-block;
+		float: left;
+		padding-top: 4em; 
+		width: 3em; 
+	}	
+	
+	&:before {
+		content: "\e902";
+		@extend %icon;
+		position: absolute;
+	    left: -3em;
+	    
+	    font-size: 1em;
+	    color: rgba(#000,0.3);
+	   	transform:translateY(-50%);
+	   	top: 50%; 
+	   	
+	   	 @media (max-width: $graph-breakpoint) { 
+			bottom: auto;
+			top: 2em;
+			left: 0;  
+	    }
+		
+	}
+	
+	.item {
+		display: inline-block;
+	    transform: rotate(-90deg);
+	    font-size: .9em;
+	    height: 40px;
+	    float: left;
+	    width: 36px;
+	    
+
+
+		@media (max-width: $graph-breakpoint) {
+			transform: rotate(0deg);
+			clear: both;
+			height: 36px;
+			line-height: 1px;  
+		}	
+	
+	}
+}
+
+.legend {
+	@include list-unstyled;
+	@include list-inline-block;
+	text-align: left;
+	font-size: .9em; 
+	
+	@media (max-width: $graph-breakpoint) {
+		clear: both;
+	}	
+	
+	.item {
+		padding-left: 1.5em;
+		margin-right: 1em; 
+		position: relative; 
+		
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			width: 1em;
+			height: 1em;
+			border-radius: 1em;    
+			top:  3px; 
+			
+		}
+
+		&.unoccupied:before {
+			background: map-get($graph-colors, unoccupied);
+		}
+
+		&.canbeoccupied:before {
+			background: map-get($graph-colors, canbeoccupied);
+		}
+
+		&.occupied:before {
+			background: map-get($graph-colors, occupied);
+		}
+	}
+}

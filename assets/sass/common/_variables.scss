@@ -1,0 +1,20 @@
+$main-font: 'Open Sans', sans-serif;
+$secondary-font: 'chevinmediumregular';
+
+$default-font-weight: 300;
+
+$brand-color: #e84e0f;
+
+$graph-colors: (
+  unoccupied: #ffc59b,
+  canbeoccupied: #f88c6c,
+  occupied: #e64e21
+);
+
+$graph-breakpoint: 650px;
+$menu-breakpoint: 700px;
+
+$small-margin: 0.5em;
+$col-padding: 15px;
+
+$transition-time: 0.3s;
