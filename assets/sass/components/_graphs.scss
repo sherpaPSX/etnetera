@@ -63,7 +63,7 @@
 		
 		
 
-		&:hover {
+		&:hover, &:focus  {
 			opacity: .8;
 			
 			.number {
