@@ -28,6 +28,7 @@ $(document).ready(function() {
 
 
 function graph(){
+	
 	if ($(window).width() < 380) {
     	loop(1);
   	} else if ($(window).width() < 650) {
